@@ -1,8 +1,14 @@
 class FibonacciController < ApplicationController
 	def show
-    number = params[:n].to_i
-    result = fibonacci_calc(number)
-    render json: { number: result }
+		begin
+			raise StandardError if !params[:n]
+			raise StandardError if params[:n] !~ /^[0-9]+$/
+			number = params[:n].to_i
+			result = fibonacci_calc(number)
+			render json: { result: result }
+		rescue
+			render json: { status: 400, message: "Bad request."}
+		end
   end
 
   private
