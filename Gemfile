@@ -31,6 +31,23 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+end
+
+#group :production, :staging do
+# gem 'unicorn'
+#end
+
+group :test do
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdriver"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
