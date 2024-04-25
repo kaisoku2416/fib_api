@@ -36,13 +36,12 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'rspec-rails'
-  gem 'factory_bot_rails'
   gem 'faker'
 end
 
-#group :production, :staging do
-# gem 'unicorn'
-#end
+group :production, :staging do
+  gem 'unicorn'
+end
 
 group :test do
   gem "capybara"

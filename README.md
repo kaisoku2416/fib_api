@@ -1,24 +1,21 @@
-# README
+# 技術課題 問題1
+このリポジトリは「問題1」の Ruby on Rails による実装です。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 仕様
+* URLパラメータとして$n$の値を渡すと、$n$番目のフィボナッチ数のデータをjson形式で返します。
+* 制約：$1\leq n\lt 1000000$
 
-Things you may want to cover:
+## 使用例
+* $n$が制約を満たす場合（例 $n=99$ の場合）、$n$番目のフィボナッチ数が返されます。
+* $n$が整数で、かつ制約外の場合、416コードが返されます。
+* $n$が整数でない、または$n$が与えられていない場合、400コードが返されます。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 主要フォルダの説明
+* `app/`：アプリケーションのコード
+  * `controller/`
+    * 	`fibonacci_controller.rb`：要求されたフィボナッチ数を返すためのコントローラー
+ * `config/`
+    * `routes.rb`：ルーティング指定
+ * `spec/`：ユニットテスト用
+   * `system/`
+     * `fibonacci_spec.rb`：システムテストのスクリプト（[ChromeDriver](https://chromedriver.chromium.org/downloads)が必要です）
