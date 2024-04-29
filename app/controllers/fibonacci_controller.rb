@@ -12,7 +12,7 @@ class FibonacciController < ApplicationController
     rescue TypeError
       render json: { status: 400, message: "Bad request."}
     rescue RangeError
-      render json: { status: 416, message: "Request Range Not Saticfiable."}
+      render json: { status: 416, message: "Request Range Not Satisfiable."}
     end
   end
 
